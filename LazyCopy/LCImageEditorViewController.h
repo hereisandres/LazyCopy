@@ -14,7 +14,11 @@
 @property (nonatomic, strong) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *closeButton;
+
 - (IBAction)getText:(id)sender;
 - (IBAction)toggleEditMode:(id)sender;
+- (IBAction)closeImageView:(id)sender;
 
 @end

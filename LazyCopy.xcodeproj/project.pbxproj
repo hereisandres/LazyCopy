@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2071B7F01840357800C4CB08 /* Pixate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2071B7EE1840357800C4CB08 /* Pixate.framework */; };
+		2071B7F11840357800C4CB08 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2071B7EF1840357800C4CB08 /* TesseractOCR.framework */; };
+		2071B7F3184068D100C4CB08 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2071B7F2184068D100C4CB08 /* close@2x.png */; };
+		2071B7F5184068E600C4CB08 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2071B7F4184068E600C4CB08 /* close.png */; };
+		2071B7F718406A9A00C4CB08 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 2071B7F618406A9A00C4CB08 /* default.css */; };
+		2071B7FB18407CC100C4CB08 /* LCPlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2071B7FA18407CC100C4CB08 /* LCPlistManager.m */; };
 		417AE27B18402BCC006A7379 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 417AE27918402BCC006A7379 /* edit.png */; };
 		417AE27C18402BCC006A7379 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 417AE27A18402BCC006A7379 /* edit@2x.png */; };
-		417AE27E18402E3D006A7379 /* Pixate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417AE27D18402E3D006A7379 /* Pixate.framework */; };
 		417AE28018402E6F006A7379 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417AE27F18402E6F006A7379 /* CoreText.framework */; };
 		417AE28218402E75006A7379 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417AE28118402E75006A7379 /* QuartzCore.framework */; };
 		41FC598E183FD338003DB9FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC598D183FD338003DB9FF /* Foundation.framework */; };
@@ -19,7 +24,7 @@
 		41FC599A183FD338003DB9FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC5999183FD338003DB9FF /* main.m */; };
 		41FC599E183FD338003DB9FF /* LCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC599D183FD338003DB9FF /* LCAppDelegate.m */; };
 		41FC59A1183FD338003DB9FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41FC599F183FD338003DB9FF /* Main.storyboard */; };
-		41FC59A4183FD338003DB9FF /* LCClipboardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41FC59A3183FD338003DB9FF /* LCClipboardViewController.mm */; };
+		41FC59A4183FD338003DB9FF /* LCClipboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC59A3183FD338003DB9FF /* LCClipboardViewController.m */; };
 		41FC59A6183FD338003DB9FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41FC59A5183FD338003DB9FF /* Images.xcassets */; };
 		41FC59AD183FD339003DB9FF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC59AC183FD339003DB9FF /* XCTest.framework */; };
 		41FC59AE183FD339003DB9FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC598D183FD338003DB9FF /* Foundation.framework */; };
@@ -36,7 +41,6 @@
 		41FC5AA3183FD79A003DB9FF /* eng.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = 41FC5A9A183FD79A003DB9FF /* eng.traineddata */; };
 		41FC5AA7183FDBA1003DB9FF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC5AA6183FDBA1003DB9FF /* MobileCoreServices.framework */; };
 		41FC5AA9183FDDAE003DB9FF /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC5AA8183FDDAD003DB9FF /* libstdc++.6.0.9.dylib */; };
-		41FC5AAC183FDE34003DB9FF /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC5AAB183FDE34003DB9FF /* TesseractOCR.framework */; };
 		41FC5AAF183FEE27003DB9FF /* LCImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC5AAE183FEE27003DB9FF /* LCImageEditorViewController.m */; };
 		41FC5AC218400E90003DB9FF /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC5AC118400E90003DB9FF /* UIImage+Extras.m */; };
 		41FC5AC61840125C003DB9FF /* NAnnotationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC5AC51840125C003DB9FF /* NAnnotationImageView.m */; };
@@ -53,9 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2071B7EE1840357800C4CB08 /* Pixate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pixate.framework; sourceTree = "<group>"; };
+		2071B7EF1840357800C4CB08 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		2071B7F2184068D100C4CB08 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		2071B7F4184068E600C4CB08 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		2071B7F618406A9A00C4CB08 /* default.css */ = {isa = PBXFileReference; explicitFileType = text.css; fileEncoding = 4; path = default.css; sourceTree = "<group>"; };
+		2071B7F918407CC100C4CB08 /* LCPlistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPlistManager.h; sourceTree = "<group>"; };
+		2071B7FA18407CC100C4CB08 /* LCPlistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPlistManager.m; sourceTree = "<group>"; };
 		417AE27918402BCC006A7379 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		417AE27A18402BCC006A7379 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
-		417AE27D18402E3D006A7379 /* Pixate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pixate.framework; sourceTree = "<group>"; };
 		417AE27F18402E6F006A7379 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		417AE28118402E75006A7379 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		41FC598A183FD338003DB9FF /* LazyCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +80,7 @@
 		41FC599D183FD338003DB9FF /* LCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAppDelegate.m; sourceTree = "<group>"; };
 		41FC59A0183FD338003DB9FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41FC59A2183FD338003DB9FF /* LCClipboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCClipboardViewController.h; sourceTree = "<group>"; };
-		41FC59A3183FD338003DB9FF /* LCClipboardViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LCClipboardViewController.mm; sourceTree = "<group>"; };
+		41FC59A3183FD338003DB9FF /* LCClipboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCClipboardViewController.m; sourceTree = "<group>"; };
 		41FC59A5183FD338003DB9FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		41FC59AB183FD339003DB9FF /* LazyCopyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyCopyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FC59AC183FD339003DB9FF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -89,7 +99,6 @@
 		41FC5AA4183FDB87003DB9FF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		41FC5AA6183FDBA1003DB9FF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		41FC5AA8183FDDAD003DB9FF /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
-		41FC5AAB183FDE34003DB9FF /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		41FC5AAD183FEE27003DB9FF /* LCImageEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCImageEditorViewController.h; sourceTree = "<group>"; };
 		41FC5AAE183FEE27003DB9FF /* LCImageEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCImageEditorViewController.m; sourceTree = "<group>"; };
 		41FC5AC018400E90003DB9FF /* UIImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extras.h"; sourceTree = "<group>"; };
@@ -107,11 +116,11 @@
 				417AE28018402E6F006A7379 /* CoreText.framework in Frameworks */,
 				41FC5AA9183FDDAE003DB9FF /* libstdc++.6.0.9.dylib in Frameworks */,
 				41FC5AA7183FDBA1003DB9FF /* MobileCoreServices.framework in Frameworks */,
-				417AE27E18402E3D006A7379 /* Pixate.framework in Frameworks */,
 				41FC5990183FD338003DB9FF /* CoreGraphics.framework in Frameworks */,
 				41FC5992183FD338003DB9FF /* UIKit.framework in Frameworks */,
-				41FC5AAC183FDE34003DB9FF /* TesseractOCR.framework in Frameworks */,
 				41FC598E183FD338003DB9FF /* Foundation.framework in Frameworks */,
+				2071B7F11840357800C4CB08 /* TesseractOCR.framework in Frameworks */,
+				2071B7F01840357800C4CB08 /* Pixate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,9 +137,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2071B7F818407CA800C4CB08 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2071B7F918407CC100C4CB08 /* LCPlistManager.h */,
+				2071B7FA18407CC100C4CB08 /* LCPlistManager.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		417AE27818402BCC006A7379 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2071B7F4184068E600C4CB08 /* close.png */,
+				2071B7F2184068D100C4CB08 /* close@2x.png */,
 				417AE27918402BCC006A7379 /* edit.png */,
 				417AE27A18402BCC006A7379 /* edit@2x.png */,
 			);
@@ -159,10 +179,10 @@
 		41FC598C183FD338003DB9FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2071B7EE1840357800C4CB08 /* Pixate.framework */,
+				2071B7EF1840357800C4CB08 /* TesseractOCR.framework */,
 				417AE28118402E75006A7379 /* QuartzCore.framework */,
 				417AE27F18402E6F006A7379 /* CoreText.framework */,
-				417AE27D18402E3D006A7379 /* Pixate.framework */,
-				41FC5AAB183FDE34003DB9FF /* TesseractOCR.framework */,
 				41FC5AA8183FDDAD003DB9FF /* libstdc++.6.0.9.dylib */,
 				41FC5AA6183FDBA1003DB9FF /* MobileCoreServices.framework */,
 				41FC5AA4183FDB87003DB9FF /* CoreMedia.framework */,
@@ -177,6 +197,7 @@
 		41FC5993183FD338003DB9FF /* LazyCopy */ = {
 			isa = PBXGroup;
 			children = (
+				2071B7F818407CA800C4CB08 /* Models */,
 				41FC5AB0183FF6B3003DB9FF /* Categories */,
 				41FC5A7C183FD6F0003DB9FF /* Resources */,
 				41FC5A79183FD6A9003DB9FF /* Singletons */,
@@ -230,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				41FC59A2183FD338003DB9FF /* LCClipboardViewController.h */,
-				41FC59A3183FD338003DB9FF /* LCClipboardViewController.mm */,
+				41FC59A3183FD338003DB9FF /* LCClipboardViewController.m */,
 				41FC5AAD183FEE27003DB9FF /* LCImageEditorViewController.h */,
 				41FC5AAE183FEE27003DB9FF /* LCImageEditorViewController.m */,
 			);
@@ -249,6 +270,7 @@
 		41FC5A7C183FD6F0003DB9FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2071B7F618406A9A00C4CB08 /* default.css */,
 				417AE27818402BCC006A7379 /* images */,
 				41FC5A91183FD79A003DB9FF /* tessdata */,
 			);
@@ -337,6 +359,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Hundred10;
 				TargetAttributes = {
+					41FC5989183FD338003DB9FF = {
+						DevelopmentTeam = 3VX8L4XR6S;
+					};
 					41FC59AA183FD339003DB9FF = {
 						TestTargetID = 41FC5989183FD338003DB9FF;
 					};
@@ -369,8 +394,11 @@
 				41FC5AA3183FD79A003DB9FF /* eng.traineddata in Resources */,
 				41FC5A9F183FD79A003DB9FF /* eng.cube.params in Resources */,
 				41FC59A6183FD338003DB9FF /* Images.xcassets in Resources */,
+				2071B7F5184068E600C4CB08 /* close.png in Resources */,
 				41FC5AA1183FD79A003DB9FF /* eng.cube.word-freq in Resources */,
+				2071B7F3184068D100C4CB08 /* close@2x.png in Resources */,
 				41FC5A9C183FD79A003DB9FF /* eng.cube.fold in Resources */,
+				2071B7F718406A9A00C4CB08 /* default.css in Resources */,
 				417AE27B18402BCC006A7379 /* edit.png in Resources */,
 				41FC5AA2183FD79A003DB9FF /* eng.tesseract_cube.nn in Resources */,
 				41FC5AA0183FD79A003DB9FF /* eng.cube.size in Resources */,
@@ -402,7 +430,8 @@
 				41FC599E183FD338003DB9FF /* LCAppDelegate.m in Sources */,
 				41FC5AC61840125C003DB9FF /* NAnnotationImageView.m in Sources */,
 				41FC5AC218400E90003DB9FF /* UIImage+Extras.m in Sources */,
-				41FC59A4183FD338003DB9FF /* LCClipboardViewController.mm in Sources */,
+				2071B7FB18407CC100C4CB08 /* LCPlistManager.m in Sources */,
+				41FC59A4183FD338003DB9FF /* LCClipboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +516,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -520,7 +552,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -531,19 +566,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andres Lopez (9XFP6M4MK8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/andres/iOS/LazyCopy,
+					/Users/lopeza511/Documents/Projects/LazyCopy,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LazyCopy/LazyCopy-Prefix.pch";
 				INFOPLIST_FILE = "LazyCopy/LazyCopy-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/andres/iOS/LazyCopy/LazyCopy/tesseract-ios-lib/lib",
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
 				);
-				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0473DE2E-1707-436A-8627-82799FC70FDA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -553,19 +591,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andres Lopez (9XFP6M4MK8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/andres/iOS/LazyCopy,
+					/Users/lopeza511/Documents/Projects/LazyCopy,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LazyCopy/LazyCopy-Prefix.pch";
 				INFOPLIST_FILE = "LazyCopy/LazyCopy-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/andres/iOS/LazyCopy/LazyCopy/tesseract-ios-lib/lib",
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
 				);
-				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0473DE2E-1707-436A-8627-82799FC70FDA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

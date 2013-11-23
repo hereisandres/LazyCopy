@@ -9,6 +9,7 @@
 #import "LCImageEditorViewController.h"
 #import <TesseractOCR/TesseractOCR.h>
 #import "UIImage+Extras.h"
+#import "LCPlistManager.h"
 
 @interface LCImageEditorViewController ()
 
@@ -35,6 +36,7 @@
         _scale = self.view.frame.size.width / self.image.size.width;
     }
     
+    // Setup the scrollview.
     [self.scrollView setContentSize:self.imageView.bounds.size];
     [self.scrollView addSubview:self.imageView];
     [self.scrollView setMaximumZoomScale:1.5f];
@@ -46,24 +48,32 @@
 {
     [super viewDidAppear:animated];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Transcode"
-                                                                              style:UIBarButtonItemStyleBordered
-                                                                             target:self action:@selector(getText:)];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (IBAction)getText:(id)sender
 {
     if (self.image) {
+        // Translate into text.
         Tesseract* tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
         [tesseract setImage:self.image];
         [tesseract recognize];
         NSString *text = [tesseract recognizedText];
         [tesseract clear];
         
+        // Clean up.
+        text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSLog(@"%@", text);
+        
         // Copy to clipbard
         UIPasteboard *pb = [UIPasteboard generalPasteboard];
         [pb setString:text];
+        
+        // Save to history.
+        LCPlistManager *manager = [[LCPlistManager alloc] init];
+        [manager addHistoryItem:text];
+        [manager save];
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
@@ -73,6 +83,17 @@
 {
     self.imageView.annotationMode = !self.imageView.annotationMode;
     self.scrollView.scrollEnabled = !self.imageView.annotationMode;
+    
+    if (self.imageView.annotationMode) {
+        self.editButton.styleClass = @"btn-edit selected";
+    } else {
+        self.editButton.styleClass = @"btn-edit";
+    }
+}
+
+- (IBAction)closeImageView:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)setImage:(UIImage *)image
@@ -99,8 +120,7 @@
 
 - (void)annotationView:(NAnnotationImageView *)annotationView didFinishDrawingWithRect:(CGRect)rect
 {
-    self.imageView.annotationMode = NO;
-    self.scrollView.scrollEnabled = YES;
+    [self toggleEditMode:nil];
     
     CGFloat ratioX = self.image.size.width / self.imageView.bounds.size.width;
     CGFloat ratioY = self.image.size.height / self.imageView.bounds.size.height;
@@ -137,12 +157,8 @@
         frameToCenter.origin.x = 0;
     }
     // center vertically
-    if (frameToCenter.size.height <= boundsSize.height) {
-        frameToCenter.origin.y = ((boundsSize.height - frameToCenter.size.height) / 2);
-    }
-    else {
-        frameToCenter.origin.y = 0;
-    }
+    frameToCenter.origin.y = 0;
+    
     return frameToCenter;
 }
 

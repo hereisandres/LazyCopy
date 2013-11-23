@@ -31,6 +31,10 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Ar-sO-jUD" id="Ajf-Mb-Lfb"/>
+                            <outlet property="delegate" destination="2Ar-sO-jUD" id="4sh-sm-yOI"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Clipboard" id="GQp-Mw-QJr">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZEF-br-3tp"/>
@@ -58,34 +62,51 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-th-B3X">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="fDo-wW-82E" id="VPN-6l-u3i"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8S-Wg-dTh">
-                                <rect key="frame" x="270" y="30" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="AJn-08-ahj"/>
-                                    <constraint firstAttribute="width" constant="40" id="VBy-6o-poQ"/>
-                                </constraints>
-                                <state key="normal" image="edit.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleEditMode:" destination="fDo-wW-82E" eventType="touchUpInside" id="nk1-WY-QyH"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scZ-tE-I9j">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="edit.png" id="yTP-DT-Hx9">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="btn-edit"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="toggleEditMode:" destination="fDo-wW-82E" id="7LH-4I-GSl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="F7L-dw-FOY"/>
+                                    <barButtonItem title="OCR" id="9CV-rd-9Xs">
+                                        <connections>
+                                            <action selector="getText:" destination="fDo-wW-82E" id="2cT-3U-6nv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="close.png" id="eYM-CX-w8X">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="btn-close"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeImageView:" destination="fDo-wW-82E" id="r3w-XL-JcG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Z8S-Wg-dTh" secondAttribute="trailing" constant="10" id="8JS-C7-UDz"/>
-                            <constraint firstItem="Z8S-Wg-dTh" firstAttribute="top" secondItem="Ja3-vI-z7O" secondAttribute="bottom" constant="10" id="fYd-pj-daJ"/>
+                            <constraint firstItem="scZ-tE-I9j" firstAttribute="leading" secondItem="pgb-Or-qZl" secondAttribute="leading" id="Du7-Dr-Sdz"/>
+                            <constraint firstItem="scZ-tE-I9j" firstAttribute="top" secondItem="Ja3-vI-z7O" secondAttribute="bottom" id="Hmd-a6-0jk"/>
+                            <constraint firstAttribute="trailing" secondItem="scZ-tE-I9j" secondAttribute="trailing" id="ePa-J7-NP5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="eYM-CX-w8X" id="nSH-XO-bi3"/>
+                        <outlet property="editButton" destination="yTP-DT-Hx9" id="kD4-eX-NST"/>
                         <outlet property="scrollView" destination="hmA-th-B3X" id="cuP-NQ-MpK"/>
                     </connections>
                 </viewController>
@@ -110,6 +131,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close.png" width="32" height="32"/>
         <image name="edit.png" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -9,6 +9,7 @@
 #import "LCClipboardViewController.h"
 #import "LCImageEditorViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "LCPlistManager.h"
 
 NSString * const CellIdentifier = @"ClipboardItem";
 
@@ -16,6 +17,7 @@ NSString * const CellIdentifier = @"ClipboardItem";
 
 @property (nonatomic, strong) UIImagePickerController *cameraPickerController;
 @property (nonatomic, strong) UINavigationController *appNavigationController;
+@property (nonatomic, strong) LCPlistManager *manager;
 
 @end
 
@@ -27,6 +29,18 @@ NSString * const CellIdentifier = @"ClipboardItem";
     
     // HACK: Preload the camera.
     [self cameraPickerController];
+    
+    // Load data.
+    [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.manager refreshData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Lazy loaders
@@ -48,6 +62,14 @@ NSString * const CellIdentifier = @"ClipboardItem";
         _appNavigationController = (UINavigationController *)[(LCAppDelegate *)[UIApplication sharedApplication].delegate window].rootViewController;
     }
     return _appNavigationController;
+}
+
+- (LCPlistManager *)manager
+{
+    if (_manager == nil) {
+        _manager = [[LCPlistManager alloc] init];
+    }
+    return _manager;
 }
 
 #pragma mark - Camera
@@ -83,6 +105,32 @@ NSString * const CellIdentifier = @"ClipboardItem";
             [alert show];
         }
     }];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.manager.history count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"ClipboardItem";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.textLabel.text = self.manager.history[indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Copy to clipbard
+    UIPasteboard *pb = [UIPasteboard generalPasteboard];
+    [pb setString:self.manager.history[indexPath.row]];
 }
 
 @end
