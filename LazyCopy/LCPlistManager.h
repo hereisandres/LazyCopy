@@ -15,5 +15,6 @@
 - (void)addHistoryItem:(NSString *)text;
 - (void)refreshData;
 - (void)save;
+- (void)deleteObjectAtIndex:(NSUInteger)index;
 
 @end

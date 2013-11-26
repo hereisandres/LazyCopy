@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+Extras.h"
+#import <GPUImage/GPUImage.h>
 
 @implementation UIImage (Extras)
 
@@ -254,6 +255,31 @@
     CGSize newSize = CGSizeMake(newWidth, newHeight);
     
     return [self imageWithImage:image scaledToSize:newSize];
+}
+
+- (UIImage *)prepareImageForOCR
+{
+    UIImage *processedImage;
+    GPUImagePicture *picture = [[GPUImagePicture alloc] initWithImage:self];
+    
+    // threshold: Turn the image into a hard black and white image.
+    GPUImageLuminanceThresholdFilter *luminanceFilter = [[GPUImageLuminanceThresholdFilter alloc] init];
+    luminanceFilter.threshold = 0.5f;
+    [picture addTarget:luminanceFilter];
+    [picture processImage];
+    processedImage = [luminanceFilter imageFromCurrentlyProcessedOutput];
+    
+    // Gray scale image.
+    
+    // blur
+    picture = [[GPUImagePicture alloc] initWithImage:processedImage];
+    GPUImageAdaptiveThresholdFilter *blurFilter = [[GPUImageAdaptiveThresholdFilter alloc] init];
+    blurFilter.blurRadiusInPixels = 10.f;
+    [picture addTarget:blurFilter];
+    [picture processImage];
+    processedImage = [blurFilter imageFromCurrentlyProcessedOutput];
+    
+    return processedImage;
 }
 
 @end

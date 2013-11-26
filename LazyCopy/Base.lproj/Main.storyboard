@@ -13,18 +13,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClipboardItem" textLabel="hbz-wZ-Un7" style="IBUITableViewCellStyleDefault" id="oVv-VY-aXj">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClipboardItem" id="oVv-VY-aXj">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oVv-VY-aXj" id="1MF-wA-5mb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hbz-wZ-Un7">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="CVU-Bv-8eO">
+                                            <rect key="frame" x="40" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -61,7 +60,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-th-B3X">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-th-B3X">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
@@ -99,9 +98,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="scZ-tE-I9j" firstAttribute="leading" secondItem="pgb-Or-qZl" secondAttribute="leading" id="Du7-Dr-Sdz"/>
-                            <constraint firstItem="scZ-tE-I9j" firstAttribute="top" secondItem="Ja3-vI-z7O" secondAttribute="bottom" id="Hmd-a6-0jk"/>
-                            <constraint firstAttribute="trailing" secondItem="scZ-tE-I9j" secondAttribute="trailing" id="ePa-J7-NP5"/>
+                            <constraint firstItem="scZ-tE-I9j" firstAttribute="leading" secondItem="pgb-Or-qZl" secondAttribute="leading" id="0YS-Kp-S7V"/>
+                            <constraint firstItem="hmA-th-B3X" firstAttribute="top" secondItem="scZ-tE-I9j" secondAttribute="bottom" id="3LS-23-Kk3"/>
+                            <constraint firstItem="hmA-th-B3X" firstAttribute="leading" secondItem="pgb-Or-qZl" secondAttribute="leading" id="43d-gw-stu"/>
+                            <constraint firstAttribute="trailing" secondItem="scZ-tE-I9j" secondAttribute="trailing" id="6IL-KK-Ibb"/>
+                            <constraint firstItem="qOF-di-i5u" firstAttribute="top" secondItem="hmA-th-B3X" secondAttribute="bottom" id="6e8-nz-bDm"/>
+                            <constraint firstItem="scZ-tE-I9j" firstAttribute="top" secondItem="Ja3-vI-z7O" secondAttribute="bottom" id="RKl-KC-kOj"/>
+                            <constraint firstAttribute="trailing" secondItem="hmA-th-B3X" secondAttribute="trailing" id="kmm-pA-cmr"/>
+                            <constraint firstItem="hmA-th-B3X" firstAttribute="top" secondItem="scZ-tE-I9j" secondAttribute="bottom" id="yxb-GN-23o"/>
                         </constraints>
                     </view>
                     <connections>

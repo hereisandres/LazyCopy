@@ -68,7 +68,7 @@
     
     CGContextSetLineCap(currentContext, kCGLineCapRound);
     CGContextSetLineWidth(currentContext, self.brushSize);
-    CGContextSetRGBStrokeColor(currentContext, 1, 0.69, 0.2, 0.85);
+    CGContextSetRGBStrokeColor(currentContext, 1, 0.69, 0.2, 0.65);
     CGContextBeginPath(currentContext);
     CGContextMoveToPoint(currentContext, fromPoint.x, fromPoint.y);
     CGContextAddLineToPoint(currentContext, toPoint.x, toPoint.y);

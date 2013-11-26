@@ -13,6 +13,7 @@
 		2071B7F5184068E600C4CB08 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2071B7F4184068E600C4CB08 /* close.png */; };
 		2071B7F718406A9A00C4CB08 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 2071B7F618406A9A00C4CB08 /* default.css */; };
 		2071B7FB18407CC100C4CB08 /* LCPlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2071B7FA18407CC100C4CB08 /* LCPlistManager.m */; };
+		2071B8041843D0D300C4CB08 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2071B8031843D0D300C4CB08 /* GPUImage.framework */; };
 		417AE27B18402BCC006A7379 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 417AE27918402BCC006A7379 /* edit.png */; };
 		417AE27C18402BCC006A7379 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 417AE27A18402BCC006A7379 /* edit@2x.png */; };
 		417AE28018402E6F006A7379 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417AE27F18402E6F006A7379 /* CoreText.framework */; };
@@ -64,6 +65,7 @@
 		2071B7F618406A9A00C4CB08 /* default.css */ = {isa = PBXFileReference; explicitFileType = text.css; fileEncoding = 4; path = default.css; sourceTree = "<group>"; };
 		2071B7F918407CC100C4CB08 /* LCPlistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPlistManager.h; sourceTree = "<group>"; };
 		2071B7FA18407CC100C4CB08 /* LCPlistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPlistManager.m; sourceTree = "<group>"; };
+		2071B8031843D0D300C4CB08 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		417AE27918402BCC006A7379 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		417AE27A18402BCC006A7379 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
 		417AE27F18402E6F006A7379 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -117,6 +119,7 @@
 				41FC5AA9183FDDAE003DB9FF /* libstdc++.6.0.9.dylib in Frameworks */,
 				41FC5AA7183FDBA1003DB9FF /* MobileCoreServices.framework in Frameworks */,
 				41FC5990183FD338003DB9FF /* CoreGraphics.framework in Frameworks */,
+				2071B8041843D0D300C4CB08 /* GPUImage.framework in Frameworks */,
 				41FC5992183FD338003DB9FF /* UIKit.framework in Frameworks */,
 				41FC598E183FD338003DB9FF /* Foundation.framework in Frameworks */,
 				2071B7F11840357800C4CB08 /* TesseractOCR.framework in Frameworks */,
@@ -179,6 +182,7 @@
 		41FC598C183FD338003DB9FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2071B8031843D0D300C4CB08 /* GPUImage.framework */,
 				2071B7EE1840357800C4CB08 /* Pixate.framework */,
 				2071B7EF1840357800C4CB08 /* TesseractOCR.framework */,
 				417AE28118402E75006A7379 /* QuartzCore.framework */,

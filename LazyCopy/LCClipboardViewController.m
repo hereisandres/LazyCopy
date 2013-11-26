@@ -12,6 +12,7 @@
 #import "LCPlistManager.h"
 
 NSString * const CellIdentifier = @"ClipboardItem";
+NSInteger const ItemLabelViewTag = 1;
 
 @interface LCClipboardViewController ()
 
@@ -31,7 +32,7 @@ NSString * const CellIdentifier = @"ClipboardItem";
     [self cameraPickerController];
     
     // Load data.
-    [self.tableView reloadData];
+    [self reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -39,6 +40,11 @@ NSString * const CellIdentifier = @"ClipboardItem";
     [super viewDidAppear:animated];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self reloadData];
+}
+
+- (void)reloadData
+{
     [self.manager refreshData];
     [self.tableView reloadData];
 }
@@ -119,9 +125,25 @@ NSString * const CellIdentifier = @"ClipboardItem";
     static NSString *CellIdentifier = @"ClipboardItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = self.manager.history[indexPath.row];
+    UILabel *itemLabel = (UILabel *)[cell.contentView viewWithTag:ItemLabelViewTag];
+    itemLabel.text = self.manager.history[indexPath.row];
     
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.manager deleteObjectAtIndex:indexPath.row];
+        [self.manager refreshData];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
 }
 
 #pragma mark - UITableViewDelegate

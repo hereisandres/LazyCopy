@@ -67,4 +67,13 @@
     [self.history writeToFile:[self filepath] atomically:YES];
 }
 
+- (void)deleteObjectAtIndex:(NSUInteger)index
+{
+    NSMutableArray *temp = self.history.mutableCopy;
+    [temp removeObjectAtIndex:index];
+    self.history = temp;
+    
+    [self save];
+}
+
 @end

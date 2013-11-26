@@ -25,7 +25,9 @@
     [super viewDidLoad];
     
     // Resize and setup image.
-    _image = [[self.image fixOrientation] imageWithImage:self.image scaledToMaxWidth:self.image.size.width/4 maxHeight:self.image.size.height/4];
+    _image = [[self.image fixOrientation] imageWithImage:self.image
+                                        scaledToMaxWidth:self.image.size.width/3
+                                               maxHeight:self.image.size.height/3];
     self.imageView = [[NAnnotationImageView alloc] initWithImage:_image];
     self.imageView.delegate = self;
     self.imageView.annotationMode = NO;
@@ -55,9 +57,12 @@
 - (IBAction)getText:(id)sender
 {
     if (self.image) {
+        UIImage *ocrReadyImage = [self.image prepareImageForOCR];
+        self.imageView.image = ocrReadyImage;
+        
         // Translate into text.
         Tesseract* tesseract = [[Tesseract alloc] initWithDataPath:@"tessdata" language:@"eng"];
-        [tesseract setImage:self.image];
+        [tesseract setImage:ocrReadyImage];
         [tesseract recognize];
         NSString *text = [tesseract recognizedText];
         [tesseract clear];
@@ -75,7 +80,7 @@
         [manager addHistoryItem:text];
         [manager save];
         
-        [self.navigationController popToRootViewControllerAnimated:YES];
+//        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 
